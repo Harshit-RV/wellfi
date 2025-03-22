@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_health_connect/flutter_health_connect.dart';
+import 'package:solana_wallet_provider/solana_wallet_provider.dart';
 import 'dart:developer';
 
 import 'package:wellfi2/comp.dart';
@@ -7,9 +8,21 @@ import 'package:wellfi2/constants.dart';
 import 'package:wellfi2/layout.dart';
 import 'package:wellfi2/pages/Challenges.dart';
 import 'package:wellfi2/pages/HomeScreen.dart';
+import 'package:wellfi2/pages/WalletConnect.dart';
 
 void main() {
-  runApp(const MyApp());
+  // runApp(const MyApp());
+  runApp(
+    SolanaWalletProvider.create(
+      identity: const AppIdentity(
+        // uri: 'your-app://',
+        // icon: 'icon.png',
+        name: 'Accountability App',
+      ),
+      httpCluster: Cluster.devnet,
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -36,7 +49,7 @@ class MyApp extends StatelessWidget {
         ),
         useMaterial3: false,
       ),
-      home: const MyHomePage(),
+      home: const Layout(),
     );
   }
 }
@@ -78,7 +91,16 @@ class _MyHomePageState extends State<MyHomePage> {
                 MaterialPageRoute(builder: (context) => Challenges()),
               );
             },
-            child: const Text('go to home'),
+            child: const Text('challenges'),
+          ),
+          ElevatedButton(
+            onPressed: () async {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => WalletConnect()),
+              );
+            },
+            child: const Text('wallet connect'),
           ),
           ElevatedButton(
             onPressed: () async {

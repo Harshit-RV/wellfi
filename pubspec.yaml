@@ -40,6 +40,10 @@ dependencies:
   google_fonts: ^6.2.0
   percent_indicator: ^4.2.4
   fluttertoast: ^8.2.8
+  solana_wallet_provider: ^0.1.9
+  solana: ^0.31.0+1
+  solana_mobile_client: ^0.1.1+1
+  provider: ^6.1.2
 
 dev_dependencies:
   flutter_test:

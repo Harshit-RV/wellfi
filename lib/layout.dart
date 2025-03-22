@@ -17,41 +17,41 @@ class _LayoutState extends State<Layout> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // bottomNavigationBar: NavigationBar(
-      //   // backgroundColor: Color(0xFF3B3B3B),
-      //   // indicatorColor: kPrimaryColor,
-      //   height: 70,
-      //   destinations: const [
-      //     NavigationDestination(
-      //       icon: Icon(Icons.home, color: Colors.white),
-      //       label: 'Home',
-      //     ),
-      //     NavigationDestination(
-      //       icon: Icon(Icons.fire_truck, color: Colors.white),
-      //       label: 'My Matches',
-      //     ),
-      //     NavigationDestination(
-      //       icon: Icon(Icons.wallet, color: Colors.white),
-      //       label: 'Variations',
-      //     ),
-      //     NavigationDestination(
-      //       icon: Icon(Icons.person, color: Colors.white),
-      //       label: 'Leaders',
-      //     ),
-      //     NavigationDestination(
-      //       icon: Icon(Icons.person, color: Colors.white),
-      //       label: 'Rewards',
-      //     ),
-      //   ],
-      //   selectedIndex: currentPageIndex,
-      //   onDestinationSelected: (int index) {
-      //     if (mounted) {
-      //       setState(() {
-      //         currentPageIndex = index;
-      //       });
-      //     }
-      //   },
-      // ),
+      bottomNavigationBar: NavigationBar(
+        // backgroundColor: Color(0xFF3B3B3B),
+        // indicatorColor: kPrimaryColor,
+        height: 70,
+        destinations: const [
+          NavigationDestination(
+            icon: Icon(Icons.home, color: Colors.white),
+            label: 'Home',
+          ),
+          NavigationDestination(
+            icon: Icon(Icons.fire_truck, color: Colors.white),
+            label: 'My Matches',
+          ),
+          NavigationDestination(
+            icon: Icon(Icons.wallet, color: Colors.white),
+            label: 'Variations',
+          ),
+          NavigationDestination(
+            icon: Icon(Icons.person, color: Colors.white),
+            label: 'Leaders',
+          ),
+          NavigationDestination(
+            icon: Icon(Icons.person, color: Colors.white),
+            label: 'Rewards',
+          ),
+        ],
+        selectedIndex: currentPageIndex,
+        onDestinationSelected: (int index) {
+          if (mounted) {
+            setState(() {
+              currentPageIndex = index;
+            });
+          }
+        },
+      ),
       body: [
         HomeScreen(),
         Challenges(),
