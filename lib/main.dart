@@ -97,7 +97,7 @@ class _MyHomePageState extends State<MyHomePage> {
             onPressed: () async {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => WalletConnect()),
+                MaterialPageRoute(builder: (context) => Profile()),
               );
             },
             child: const Text('wallet connect'),

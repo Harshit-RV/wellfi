@@ -1,23 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:solana_wallet_provider/solana_wallet_provider.dart';
+import 'package:wellfi2/components/CustomAppBar.dart';
 
-class WalletConnect extends StatelessWidget {
-  const WalletConnect({super.key});
+class Profile extends StatelessWidget {
+  const Profile({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
-      body: FutureBuilder(
-        future: SolanaWalletProvider.initialize(),
-        builder: (context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.done) {
-            return WalletButton();
-          }
-          return const Scaffold(
-            body: Center(child: CircularProgressIndicator()),
-          );
-        },
+      appBar: buildCustomAppBar('Profile'),
+      body: Column(
+        children: [
+          FutureBuilder(
+            future: SolanaWalletProvider.initialize(),
+            builder: (context, snapshot) {
+              if (snapshot.connectionState == ConnectionState.done) {
+                return WalletButton();
+              }
+              return const Scaffold(
+                body: Center(child: CircularProgressIndicator()),
+              );
+            },
+          ),
+        ],
       ),
     );
   }

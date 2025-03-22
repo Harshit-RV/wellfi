@@ -3,6 +3,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:wellfi2/constants.dart';
 import 'package:wellfi2/pages/Challenges.dart';
 import 'package:wellfi2/pages/HomeScreen.dart';
+import 'package:wellfi2/pages/WalletConnect.dart';
 
 class Layout extends StatefulWidget {
   const Layout({super.key});
@@ -18,30 +19,20 @@ class _LayoutState extends State<Layout> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: NavigationBar(
-        // backgroundColor: Color(0xFF3B3B3B),
-        // indicatorColor: kPrimaryColor,
+        backgroundColor: Color(0xFF3B3B3B),
+        indicatorColor: kPrimaryColor,
         height: 70,
-        destinations: const [
-          NavigationDestination(
-            icon: Icon(Icons.home, color: Colors.white),
-            label: 'Home',
-          ),
-          NavigationDestination(
-            icon: Icon(Icons.fire_truck, color: Colors.white),
-            label: 'My Matches',
-          ),
-          NavigationDestination(
-            icon: Icon(Icons.wallet, color: Colors.white),
-            label: 'Variations',
-          ),
-          NavigationDestination(
-            icon: Icon(Icons.person, color: Colors.white),
-            label: 'Leaders',
-          ),
-          NavigationDestination(
-            icon: Icon(Icons.person, color: Colors.white),
-            label: 'Rewards',
-          ),
+        destinations: [
+          _buildNavItem(Icons.home, "Home", 0),
+          _buildNavItem(Icons.thunderstorm, "Challenges", 1),
+          _buildNavItem(Icons.wallet, "Home", 2),
+          _buildNavItem(Icons.person, "Home", 3),
+          // _buildNavItem(Icons.person, "Profile", 4),
+
+          // NavigationDestination(
+          //   icon: Icon(Icons.person, color: Colors.white),
+          //   label: 'Rewards',
+          // ),
         ],
         selectedIndex: currentPageIndex,
         onDestinationSelected: (int index) {
@@ -56,9 +47,46 @@ class _LayoutState extends State<Layout> {
         HomeScreen(),
         Challenges(),
         Challenges(),
-        Challenges(),
-        Challenges(),
+        // Challenges(),
+        Profile(),
       ][currentPageIndex],
+    );
+  }
+
+  Widget _buildNavItem(IconData icon, String label, int index) {
+    bool isSelected = currentPageIndex == index;
+    return GestureDetector(
+      onTap: () {
+        setState(() {
+          currentPageIndex = index;
+        });
+      },
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 4),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(50),
+              color: isSelected ? kPrimaryColor : Colors.transparent,
+            ),
+            child: Icon(
+              icon,
+              color: isSelected ? Colors.black : Colors.white,
+            ),
+          ),
+          const SizedBox(
+            height: 4,
+          ),
+          Text(
+            label,
+            style: TextStyle(
+              fontSize: 10,
+              color: isSelected ? kPrimaryColor : Colors.white,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

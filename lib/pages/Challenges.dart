@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:wellfi2/components/CustomAppBar.dart';
 
 class Challenges extends StatefulWidget {
   const Challenges({super.key});
@@ -59,15 +60,7 @@ class _ChallengesState extends State<Challenges> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xFF252525),
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        title: const Text("Challenges"),
-        titleTextStyle: TextStyle(
-          color: Colors.black,
-          fontSize: 20,
-          fontWeight: FontWeight.bold,
-        ),
-      ),
+      appBar: buildCustomAppBar('Challenges'),
       body: Column(
         children: [
           Expanded(
