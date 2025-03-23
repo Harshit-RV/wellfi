@@ -3,6 +3,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:wellfi2/constants.dart';
 import 'package:wellfi2/pages/Challenges.dart';
 import 'package:wellfi2/pages/HomeScreen.dart';
+import 'package:wellfi2/pages/Leaderboard.dart';
 import 'package:wellfi2/pages/WalletConnect.dart';
 
 class Layout extends StatefulWidget {
@@ -26,8 +27,8 @@ class _LayoutState extends State<Layout> {
           _buildNavItem(Icons.home, "Home", 0),
           _buildNavItem(Icons.thunderstorm, "Challenges", 1),
           _buildNavItem(Icons.wallet, "Home", 2),
-          _buildNavItem(Icons.person, "Home", 3),
-          // _buildNavItem(Icons.person, "Profile", 4),
+          _buildNavItem(Icons.leaderboard, "Leaderboard", 3),
+          _buildNavItem(Icons.person, "Profile", 4),
 
           // NavigationDestination(
           //   icon: Icon(Icons.person, color: Colors.white),
@@ -47,7 +48,7 @@ class _LayoutState extends State<Layout> {
         HomeScreen(),
         Challenges(),
         Challenges(),
-        // Challenges(),
+        Leaderboard(),
         Profile(),
       ][currentPageIndex],
     );
@@ -55,14 +56,15 @@ class _LayoutState extends State<Layout> {
 
   Widget _buildNavItem(IconData icon, String label, int index) {
     bool isSelected = currentPageIndex == index;
-    return GestureDetector(
+    return InkWell(
       onTap: () {
         setState(() {
           currentPageIndex = index;
         });
       },
       child: Column(
-        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisSize: MainAxisSize.max,
         children: [
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 4),

@@ -64,29 +64,6 @@ class HomeScreen extends StatelessWidget {
           ),
         ],
       ),
-      bottomNavigationBar: BottomAppBar(
-        shape: const CircularNotchedRectangle(),
-        notchMargin: 10,
-        color: Colors.black,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            IconButton(
-                icon: const Icon(Icons.home, color: Colors.white),
-                onPressed: () {}),
-            IconButton(
-                icon: const Icon(Icons.swap_horiz, color: Colors.white),
-                onPressed: () {}),
-            const SizedBox(width: 40),
-            IconButton(
-                icon: const Icon(Icons.grid_view, color: Colors.white),
-                onPressed: () {}),
-            IconButton(
-                icon: const Icon(Icons.star, color: Colors.white),
-                onPressed: () {}),
-          ],
-        ),
-      ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.yellowAccent,
         child: const Icon(Icons.checkroom, color: Colors.black),
