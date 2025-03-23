@@ -3,6 +3,7 @@ import 'package:wellfi2/constants.dart';
 import 'package:wellfi2/pages/Challenges.dart';
 import 'package:wellfi2/pages/HomeScreen.dart';
 import 'package:wellfi2/pages/Leaderboard.dart';
+import 'package:wellfi2/pages/LoginScreen.dart';
 import 'package:wellfi2/pages/Profile.dart';
 
 class Layout extends StatefulWidget {
@@ -40,7 +41,7 @@ class _LayoutState extends State<Layout> {
       ),
       body: const [
         HomeScreen(),
-        Challenges(),
+        LoginScreen(),
         Challenges(),
         Leaderboard(),
         Profile(),
@@ -86,29 +87,3 @@ class _LayoutState extends State<Layout> {
     );
   }
 }
-
-//  bottomNavigationBar: Stack(
-//         alignment: Alignment.bottomCenter,
-//         children: [
-//           Container(
-//             height: 70,
-//             decoration: const BoxDecoration(
-//               color: Colors.black,
-//               borderRadius: BorderRadius.only(
-//                 topLeft: Radius.circular(25),
-//                 topRight: Radius.circular(25),
-//               ),
-//             ),
-//             child: Row(
-//               mainAxisAlignment: MainAxisAlignment.spaceAround,
-//               children: [
-//                 _buildNavItem(Icons.home, "Home", 0),
-//                 _buildNavItem(Icons.local_fire_department, "Matches", 1),
-//                 // SizedBox(width: 50), // Space for floating button
-//                 _buildNavItem(Icons.emoji_events, "Leaders", 3),
-//                 _buildNavItem(Icons.card_giftcard, "Rewards", 4),
-//               ],
-//             ),
-//           ),
-//         ],
-//       ),
