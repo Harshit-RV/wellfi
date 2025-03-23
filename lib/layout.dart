@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:wellfi2/constants.dart';
 import 'package:wellfi2/pages/Challenges.dart';
 import 'package:wellfi2/pages/HomeScreen.dart';
 import 'package:wellfi2/pages/Leaderboard.dart';
-import 'package:wellfi2/pages/WalletConnect.dart';
+import 'package:wellfi2/pages/Profile.dart';
 
 class Layout extends StatefulWidget {
   const Layout({super.key});
@@ -20,7 +19,7 @@ class _LayoutState extends State<Layout> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: NavigationBar(
-        backgroundColor: Color(0xFF3B3B3B),
+        backgroundColor: const Color(0xFF3B3B3B),
         indicatorColor: kPrimaryColor,
         height: 70,
         destinations: [
@@ -29,11 +28,6 @@ class _LayoutState extends State<Layout> {
           _buildNavItem(Icons.wallet, "Home", 2),
           _buildNavItem(Icons.leaderboard, "Leaderboard", 3),
           _buildNavItem(Icons.person, "Profile", 4),
-
-          // NavigationDestination(
-          //   icon: Icon(Icons.person, color: Colors.white),
-          //   label: 'Rewards',
-          // ),
         ],
         selectedIndex: currentPageIndex,
         onDestinationSelected: (int index) {
@@ -44,7 +38,7 @@ class _LayoutState extends State<Layout> {
           }
         },
       ),
-      body: [
+      body: const [
         HomeScreen(),
         Challenges(),
         Challenges(),

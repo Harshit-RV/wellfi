@@ -11,6 +11,9 @@ class Profile extends StatelessWidget {
       appBar: buildCustomAppBar('Profile'),
       body: Column(
         children: [
+          SizedBox(height: 10),
+          Text('Harshit'),
+          SizedBox(height: 10),
           FutureBuilder(
             future: SolanaWalletProvider.initialize(),
             builder: (context, snapshot) {

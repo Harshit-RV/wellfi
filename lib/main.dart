@@ -8,7 +8,7 @@ import 'package:wellfi2/constants.dart';
 import 'package:wellfi2/layout.dart';
 import 'package:wellfi2/pages/Challenges.dart';
 import 'package:wellfi2/pages/HomeScreen.dart';
-import 'package:wellfi2/pages/WalletConnect.dart';
+import 'package:wellfi2/pages/Profile.dart';
 
 void main() {
   // runApp(const MyApp());
