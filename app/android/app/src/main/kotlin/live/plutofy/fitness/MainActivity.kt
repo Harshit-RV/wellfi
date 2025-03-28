@@ -1,4 +1,4 @@
-package com.example.wellfi2
+package live.plutofy.fitness
 
 import io.flutter.embedding.android.FlutterActivity
 
