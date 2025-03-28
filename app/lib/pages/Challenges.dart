@@ -109,7 +109,7 @@ class ChallengeWidget extends StatelessWidget {
     return Container(
       width: double.infinity,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(18),
         color: Colors.white,
         border: Border.all(color: Colors.grey.shade800),
       ),
