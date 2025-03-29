@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:wellfi2/constants.dart';
 import 'package:wellfi2/pages/Challenges.dart';
+import 'package:wellfi2/pages/ChartScreen.dart';
+import 'package:wellfi2/pages/Charts.dart';
 import 'package:wellfi2/pages/FitnessData.dart';
 import 'package:wellfi2/pages/Friends.dart';
 import 'package:wellfi2/pages/HomeScreen.dart';
@@ -34,10 +36,11 @@ class _LayoutState extends State<Layout> {
         selectedIndex: currentPageIndex,
       ),
       body: [
-        FitnessData(),
-        Friends(),
+        HomeScreen(),
+        StepsChartScreenS(),
+        // StepsChartApp(),
         Challenges(),
-        Leaderboard(),
+        StepsChartScreen(),
         Profile(),
       ][currentPageIndex],
     );

@@ -1,9 +1,9 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_health_connect/flutter_health_connect.dart';
-import 'package:permission_handler/permission_handler.dart';
+import 'package:wellfi2/comp.dart';
+import 'package:syncfusion_flutter_charts/charts.dart';
 
 class FitnessData extends StatefulWidget {
   const FitnessData({super.key});
@@ -27,6 +27,26 @@ class _FitnessDataState extends State<FitnessData> {
   Map<String, dynamic> data = {};
   String resultText = '';
 
+  final List<StepData> stepCountData = [
+    StepData('Mon', 3000),
+    StepData('Tue', 6041),
+    StepData('Wed', 5000),
+    StepData('Thu', 4000),
+    StepData('Fri', 4500),
+    StepData('Sat', 5000),
+    StepData('Sun', 0),
+  ];
+
+  final List<StepDistanceData> stepDistanceData = [
+    StepDistanceData('Mon', 2.0),
+    StepDistanceData('Tue', 3.83),
+    StepDistanceData('Wed', 3.2),
+    StepDistanceData('Thu', 2.5),
+    StepDistanceData('Fri', 2.8),
+    StepDistanceData('Sat', 3.0),
+    StepDistanceData('Sun', 0.0),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,6 +56,33 @@ class _FitnessDataState extends State<FitnessData> {
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
+          Container(
+            height: 200,
+            decoration: BoxDecoration(
+              color: Colors.black.withOpacity(0.5),
+              borderRadius: BorderRadius.all(Radius.circular(14)),
+            ),
+            padding: EdgeInsets.fromLTRB(10, 15, 10, 5),
+            child: SfCartesianChart(
+              primaryXAxis: CategoryAxis(
+                axisLine: AxisLine(color: Colors.grey.shade700),
+                labelStyle: TextStyle(color: Colors.grey.shade700),
+              ),
+              primaryYAxis: NumericAxis(
+                axisLine: AxisLine(color: Colors.grey.shade700),
+                labelStyle: TextStyle(color: Colors.grey.shade700),
+              ),
+              // title: ChartTitle(text: 'DISTANCE'),
+              series: <CartesianSeries>[
+                ColumnSeries<StepDistanceData, String>(
+                  dataSource: stepDistanceData,
+                  xValueMapper: (StepDistanceData data, _) => data.day,
+                  yValueMapper: (StepDistanceData data, _) => data.distance,
+                  color: Colors.blue,
+                ),
+              ],
+            ),
+          ),
           ElevatedButton(
             onPressed: () async {
               var result = await HealthConnectFactory.isApiSupported();
@@ -86,7 +133,6 @@ class _FitnessDataState extends State<FitnessData> {
             },
             child: const Text('Request Permissions'),
           ),
-
           ElevatedButton(
             onPressed: () async {
               try {
@@ -133,12 +179,12 @@ class _FitnessDataState extends State<FitnessData> {
             },
             child: const Text('Get Health Data'),
           ),
-          // Container(
-          //   height: 1000,
-          //   child: FitnessRecordsWidget(
-          //     data: data,
-          //   ),
-          // ),
+          Container(
+            height: 1000,
+            child: FitnessRecordsWidget(
+              data: data,
+            ),
+          ),
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: SelectableText(
@@ -154,4 +200,18 @@ class _FitnessDataState extends State<FitnessData> {
   void _updateResultText() {
     setState(() {});
   }
+}
+
+class StepData {
+  final String day;
+  final int steps;
+
+  StepData(this.day, this.steps);
+}
+
+class StepDistanceData {
+  final String day;
+  final double distance;
+
+  StepDistanceData(this.day, this.distance);
 }
