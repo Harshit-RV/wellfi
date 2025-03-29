@@ -2,7 +2,6 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_health_connect/flutter_health_connect.dart';
-import 'package:wellfi2/comp.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
 class FitnessData extends StatefulWidget {
@@ -15,6 +14,7 @@ class FitnessData extends StatefulWidget {
 class _FitnessDataState extends State<FitnessData> {
   List<HealthConnectDataType> types = [
     HealthConnectDataType.Power,
+    HealthConnectDataType.Distance,
     HealthConnectDataType.Steps,
     HealthConnectDataType.TotalCaloriesBurned,
     HealthConnectDataType.HeartRate,
@@ -178,12 +178,6 @@ class _FitnessDataState extends State<FitnessData> {
               _updateResultText();
             },
             child: const Text('Get Health Data'),
-          ),
-          Container(
-            height: 1000,
-            child: FitnessRecordsWidget(
-              data: data,
-            ),
           ),
           Padding(
             padding: const EdgeInsets.all(16.0),
