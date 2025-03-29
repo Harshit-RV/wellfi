@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:wellfi2/constants.dart';
 import 'package:wellfi2/pages/Challenges.dart';
+import 'package:wellfi2/pages/FitnessData.dart';
+import 'package:wellfi2/pages/Friends.dart';
 import 'package:wellfi2/pages/HomeScreen.dart';
 import 'package:wellfi2/pages/Leaderboard.dart';
-import 'package:wellfi2/pages/LoginScreen.dart';
 import 'package:wellfi2/pages/Profile.dart';
 
 class Layout extends StatefulWidget {
@@ -25,23 +26,16 @@ class _LayoutState extends State<Layout> {
         height: 70,
         destinations: [
           _buildNavItem(Icons.home, "Home", 0),
-          _buildNavItem(Icons.thunderstorm, "Challenges", 1),
-          _buildNavItem(Icons.wallet, "Home", 2),
+          _buildNavItem(Icons.group, "Friends", 1),
+          _buildNavItem(Icons.thunderstorm, "Challenges", 2),
           _buildNavItem(Icons.leaderboard, "Leaderboard", 3),
           _buildNavItem(Icons.person, "Profile", 4),
         ],
         selectedIndex: currentPageIndex,
-        onDestinationSelected: (int index) {
-          if (mounted) {
-            setState(() {
-              currentPageIndex = index;
-            });
-          }
-        },
       ),
       body: [
-        HomeScreen(),
-        LoginScreen(),
+        FitnessData(),
+        Friends(),
         Challenges(),
         Leaderboard(),
         Profile(),
