@@ -1,9 +1,12 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:solana_wallet_provider/solana_wallet_provider.dart';
 import 'package:wellfi2/components/CustomAppBar.dart';
 
 class Profile extends StatelessWidget {
-  const Profile({super.key});
+  Profile({super.key});
+
+  final FirebaseAuth _auth = FirebaseAuth.instance;
 
   @override
   Widget build(BuildContext context) {
@@ -24,6 +27,10 @@ class Profile extends StatelessWidget {
                 body: Center(child: CircularProgressIndicator()),
               );
             },
+          ),
+          ElevatedButton(
+            onPressed: () => _auth.signOut(),
+            child: Text('Sign out'),
           ),
         ],
       ),

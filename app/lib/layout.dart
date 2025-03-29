@@ -39,7 +39,7 @@ class _LayoutState extends State<Layout> {
           }
         },
       ),
-      body: const [
+      body: [
         HomeScreen(),
         LoginScreen(),
         Challenges(),
