@@ -24,6 +24,8 @@ class ChallengeService {
         final List<dynamic> data = jsonDecode(response.body);
         return data.map((challenge) => Challenge.fromJson(challenge)).toList();
       } else {
+        print('Error: ${response.statusCode}');
+        print('Error: ${response.body}');
         return [];
       }
     } catch (e) {

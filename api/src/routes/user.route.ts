@@ -15,7 +15,7 @@ import { verifyToken } from '../middleware/auth';
 
 const router = express.Router();
 
-// router.use(verifyToken);
+router.use(verifyToken);
 
 // Create a new user
 router.post("/create", async (req, res): Promise<any> => {

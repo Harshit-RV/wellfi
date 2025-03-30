@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wellfi2/constants.dart';
 import 'package:wellfi2/pages/Challenges.dart';
-import 'package:wellfi2/pages/ChartScreen.dart';
 import 'package:wellfi2/pages/Charts.dart';
 import 'package:wellfi2/pages/FitnessData.dart';
 import 'package:wellfi2/pages/Friends.dart';
@@ -17,7 +16,7 @@ class Layout extends StatefulWidget {
 }
 
 class _LayoutState extends State<Layout> {
-  int currentPageIndex = 0;
+  int currentPageIndex = 4;
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +39,7 @@ class _LayoutState extends State<Layout> {
         StepsChartScreenS(),
         // StepsChartApp(),
         Challenges(),
-        StepsChartScreen(),
+        Leaderboard(),
         Profile(),
       ][currentPageIndex],
     );
