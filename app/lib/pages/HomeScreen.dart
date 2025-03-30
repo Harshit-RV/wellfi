@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_health_connect/flutter_health_connect.dart';
 import 'package:intl/intl.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
+import 'package:wellfi2/components/CustomAppBar.dart';
 import 'package:wellfi2/constants.dart';
 import 'package:wellfi2/utils/helper.dart';
 
@@ -91,9 +92,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Health Connect'),
-      ),
+      appBar: buildCustomAppBar('Health Connect'),
       body: ListView(
         padding: const EdgeInsets.all(12),
         children: [

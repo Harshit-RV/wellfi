@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
+import 'package:wellfi2/components/CustomAppBar.dart';
 
 class StepsChartScreenS extends StatelessWidget {
   StepsChartScreenS({Key? key}) : super(key: key);
@@ -29,11 +30,7 @@ class StepsChartScreenS extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          'Steps',
-        ),
-      ),
+      appBar: buildCustomAppBar('Steps'),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -81,7 +78,7 @@ class StepsChartScreenS extends StatelessWidget {
                   color: Colors.black.withOpacity(0.5),
                   borderRadius: BorderRadius.all(Radius.circular(14)),
                 ),
-                 padding: EdgeInsets.fromLTRB(10, 15, 10, 5),
+                padding: EdgeInsets.fromLTRB(10, 15, 10, 5),
                 child: SfCartesianChart(
                   primaryXAxis: CategoryAxis(
                     axisLine: AxisLine(color: Colors.grey.shade700),

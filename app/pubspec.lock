@@ -281,7 +281,7 @@ packages:
     source: hosted
     version: "0.2.0"
   http:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: http
       sha256: b9c29a161230ee03d3ccf545097fccd9b87a5264228c5d348202e0f0c28f9010
@@ -313,7 +313,7 @@ packages:
     source: hosted
     version: "0.6.7"
   json_annotation:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: json_annotation
       sha256: "1ce844379ca14835a50d2f019a3099f419082cfdd231cd86a142af94dd5c6bb1"

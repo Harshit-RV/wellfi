@@ -96,7 +96,7 @@ class Helper {
 
       DateTime date = DateTime.parse(dateString);
       String dayOfWeek = getDayOfWeek(date.weekday);
-      print('${date.weekday} $dayOfWeek ${date.day} $dateString');
+      // print('${date.weekday} $dayOfWeek ${date.day} $dateString');
 
       result.add(
           DataItem(date.day.toString() + '/' + date.month.toString(), steps));
@@ -204,4 +204,24 @@ class Helper {
         .map((entry) => {entry.key: entry.value})
         .toList();
   }
+
+  // static void convertMongoTimestampToLocal = (mongoTimestamp: Date): string => {
+  //   const date = new Date(mongoTimestamp);
+
+  //   const day = String(date.getDate()).padStart(2, '0');
+  //   const month = String(date.getMonth() + 1).padStart(2, '0');
+  //   const year = date.getFullYear();
+  //   let hours = date.getHours();
+  //   const minutes = String(date.getMinutes()).padStart(2, '0');
+
+  //   // Determine AM/PM
+  //   const period = hours >= 12 ? 'PM' : 'AM';
+
+  //   hours = hours % 12;
+  //   hours = hours ? hours : 12;
+
+  //   const formattedDate = `${String(hours).padStart(2, '0')}:${minutes} ${period}, ${day}/${month}/${year} `;
+
+  //   return formattedDate;
+  // };
 }

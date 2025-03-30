@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wellfi2/components/CustomAppBar.dart';
 
 class Friends extends StatelessWidget {
   const Friends({super.key});
@@ -15,9 +16,7 @@ class Friends extends StatelessWidget {
     ];
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Friends'),
-      ),
+      appBar: buildCustomAppBar('Friends'),
       body: Column(
         children: [
           // Search Bar

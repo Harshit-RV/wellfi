@@ -1,17 +1,8 @@
 import express, { Application, NextFunction, Request, Response } from 'express';
 import mongoose from 'mongoose';
 // import userRoutes from './routes/user.route';
-// import fileRoutes from './routes/file.route';
-// import ratingRoutes from './routes/rating.route';
-// import roomRouter from './routes/room.routes';
-// import messageRouter from './routes/message.route';
-// import exploreRouter from './routes/explore.route';
-// import chemistryTestRouter from './routes/chemistryTest.route';
-// import chemistryTestResponseRouter from './routes/chemistryTestResponse.route';
-// import deletionRequestsRouter from './routes/deletionRequest.route';
-// import reportedUserRouter from './routes/reportedUser.route';
-// import blockedUserRouter from './routes/blockedUser.route';
-// import genaiRouter from './routes/genai.route';
+import challengeRoutes from './routes/challenge.route';
+import userRoutes from './routes/user.route';
 import config from './config';
 import "dotenv/config";
 import cors from 'cors';
@@ -29,13 +20,12 @@ app.use(cors());
 // Connect to MongoDB
 mongoose.connect(config.mongoURI);
 
-app.get('/health', (req, res) => {
+app.get('/v1/health', (req, res) => {
   res.status(200).send('OK');
 });
 
-// Routes
-// app.use('/users', userRoutes);
-
+app.use('/v1/challenges', challengeRoutes);
+app.use('/v1/users', userRoutes);
 
 // Global Error Handler
 app.use((err: Error, _req: Request, res: Response, _next: NextFunction) => {

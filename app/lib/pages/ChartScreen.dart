@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
+import 'package:wellfi2/components/CustomAppBar.dart';
 
 class StepsChartScreen extends StatelessWidget {
   StepsChartScreen({Key? key}) : super(key: key);
@@ -12,14 +13,7 @@ class StepsChartScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        title: const Text(
-          'Steps',
-          style: TextStyle(color: Colors.black, fontSize: 24),
-        ),
-        leading: const Icon(Icons.arrow_back, color: Colors.black),
-      ),
+      appBar: buildCustomAppBar('Chart Screen'),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -65,7 +59,8 @@ class StepsChartScreen extends StatelessWidget {
 
   Widget _buildSegmentButton(String label, {bool isSelected = false}) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: isSelected ? 8.0 : 6.0),
+      padding: EdgeInsets.symmetric(
+          horizontal: 16.0, vertical: isSelected ? 8.0 : 6.0),
       decoration: BoxDecoration(
         color: isSelected ? Colors.grey.shade200 : Colors.transparent,
         borderRadius: BorderRadius.circular(8.0),

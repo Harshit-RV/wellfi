@@ -23,7 +23,7 @@ class _LayoutState extends State<Layout> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: NavigationBar(
-        backgroundColor: const Color(0xFF3B3B3B),
+        backgroundColor: kLighterBackgroundColor,
         indicatorColor: kPrimaryColor,
         height: 70,
         destinations: [
