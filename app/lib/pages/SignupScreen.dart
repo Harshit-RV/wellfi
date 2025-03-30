@@ -83,7 +83,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           ),
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(15),
-                            borderSide: BorderSide(color: Colors.blue),
+                            borderSide: BorderSide(color: kPrimaryColor),
                           ),
                           filled: true,
                           fillColor: Colors.grey.shade900,
@@ -112,7 +112,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           ),
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(15),
-                            borderSide: BorderSide(color: Colors.blue),
+                            borderSide: BorderSide(color: kPrimaryColor),
                           ),
                           filled: true,
                           fillColor: Colors.grey.shade900,
@@ -156,7 +156,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           ),
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(15),
-                            borderSide: BorderSide(color: Colors.blue),
+                            borderSide: BorderSide(color: kPrimaryColor),
                           ),
                           filled: true,
                           fillColor: Colors.grey.shade900,
@@ -186,7 +186,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           ),
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(15),
-                            borderSide: BorderSide(color: Colors.blue),
+                            borderSide: BorderSide(color: kPrimaryColor),
                           ),
                           filled: true,
                           fillColor: Colors.grey.shade900,
@@ -314,7 +314,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               const Text(
                                 'Login',
                                 style: TextStyle(
-                                  color: Colors.blue,
+                                  color: kPrimaryColor,
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),

@@ -1,6 +1,5 @@
 import express, { Application, NextFunction, Request, Response } from 'express';
 import mongoose from 'mongoose';
-// import userRoutes from './routes/user.route';
 import challengeRoutes from './routes/challenge.route';
 import userRoutes from './routes/user.route';
 import config from './config';
@@ -10,10 +9,8 @@ import http from 'http';
 
 const app: Application = express();
 
-// Create HTTP Server
 const server = http.createServer(app);
 
-// Middleware
 app.use(express.json());
 app.use(cors());
 
@@ -33,7 +30,6 @@ app.use((err: Error, _req: Request, res: Response, _next: NextFunction) => {
   res.status(401).send('Unauthenticated!');
 });
 
-// Start the server
 const PORT = process.env.PORT || 8080;
 server.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);

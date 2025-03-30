@@ -77,7 +77,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15),
-                        borderSide: BorderSide(color: Colors.blue),
+                        borderSide: const BorderSide(color: kPrimaryColor),
                       ),
                       filled: true,
                       fillColor: Colors.grey.shade900,
@@ -119,7 +119,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15),
-                        borderSide: BorderSide(color: Colors.blue),
+                        borderSide: BorderSide(color: kPrimaryColor),
                       ),
                       filled: true,
                       fillColor: Colors.grey.shade900,
@@ -241,7 +241,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           const Text(
                             'Sign Up',
                             style: TextStyle(
-                              color: Colors.blue,
+                              color: kPrimaryColor,
                               fontWeight: FontWeight.bold,
                             ),
                           ),

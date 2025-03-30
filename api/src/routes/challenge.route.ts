@@ -14,9 +14,7 @@ import { verifyToken } from '../middleware/auth';
 
 const router = express.Router();
 
-// router.use((req, res, next) => {
-//   verifyToken(req, res, next).catch(next);
-// });
+router.use(verifyToken);
 
 // Create a new challenge
 router.post("/create", async (req, res) : Promise<any> => {

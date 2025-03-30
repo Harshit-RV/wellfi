@@ -50,7 +50,7 @@ class _HomeScreenState extends State<HomeScreen> {
         startTime: startTime,
         endTime: endTime,
       );
-
+      log(jsonEncode(distanceRes));
       final distanceByDay =
           Helper.extractDistanceByDay(jsonEncode(distanceRes));
       final tempDistanceData =
