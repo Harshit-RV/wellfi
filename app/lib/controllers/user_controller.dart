@@ -15,7 +15,7 @@ class UserController extends GetxController {
     String authToken = await _auth.currentUser!.getIdToken() ?? '';
     var userData = await UserService.getUserData(
         authToken: authToken, id: _auth.currentUser!.uid);
-    log(userData.toString());
+    // log(userData.toString());
     user.value = UserModel.fromJson(userData);
     loading.value = false;
   }

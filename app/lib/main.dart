@@ -14,9 +14,9 @@ void main() async {
   );
   runApp(
     SolanaWalletProvider.create(
-      identity: const AppIdentity(
-        // uri: 'your-app://',
-        // icon: 'icon.png',
+      identity: AppIdentity(
+        uri: Uri.parse('app://solfit'),
+        icon: Uri.parse('@mipmap/ic_launcher'),
         name: 'Accountability App',
       ),
       httpCluster: Cluster.devnet,
